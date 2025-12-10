@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    color: #fff7f7;
+    background: #a6aea6;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo-img {
+    width: 80px;
+    height: auto;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: #3a9859de;
+
+}
+
+.home {
+    height: 100vh;
+   background-image: url('kliee.jpg') ;
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #7da764;
+}
+
+.glass-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border:rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    overflow: hidden;
+
+
+}
+.selection {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+
+}
+
+.glass-radio-group {
+  --bg: rgba(255, 255, 255, 0.06);
+  --text: #e5e5e5;
+
+  display: flex;
+  position: relative;
+  background: var(--bg);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    inset 1px 1px 4px rgba(255, 255, 255, 0.2),
+    inset -1px -1px 6px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: fit-content;
+}
+
+.glass-radio-group input {
+  display: none;
+}
+
+.glass-radio-group label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  font-size: 14px;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text);
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease-in-out;
+}
+
+.glass-radio-group label:hover {
+  color: white;
+}
+
+.glass-radio-group input:checked + label {
+  color: #fff;
+}
+
+.glass-glider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(100% / 3);
+  border-radius: 1rem;
+  z-index: 1;
+  transition:
+    transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56),
+    background 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out;
+}
+
+/* HTML */
+#HTML:checked ~ .glass-glider {
+  transform: translateX(0%);
+  background: linear-gradient(135deg, #ee801855, #fa5001);
+  box-shadow:
+    0 0 18px rgba(192, 192, 192, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.4) inset;
+}
+
+/* CSS */
+#CSS:checked ~ .glass-glider {
+  transform: translateX(100%);
+  background: linear-gradient(135deg, #f526f555, #a200ff);
+  box-shadow:
+    0 0 18px rgba(255, 215, 0, 0.5),
+    0 0 10px rgba(255, 235, 150, 0.4) inset;
+}
+
+/* JavaScript */
+#JavaScript:checked ~ .glass-glider {
+  transform: translateX(200%);
+  background: linear-gradient(135deg,  #fdf905c4, #d3f708);
+  box-shadow:
+    0 0 18px rgba(160, 216, 255, 0.5),
+    0 0 10px rgba(200, 240, 255, 0.4) inset;
+}
